@@ -1,97 +1,44 @@
- >> Number of Processors =   1
-  0.500000000000000       0.500000000000000       5.068118138934313E-002
-  0.942016038424452       0.298615655649037       0.213557970099780     
-  0.833324536482747       0.518803656458236       0.685484739446295     
-  0.283054110258495     
-  0.685484739446295       0.283054110258495     
- >> Using points supplied by the user
-      >> Output to sample.dat    4
- >> Reading KrigSet.inp
-      >> # of Optimizing Functions =    1
-      >> # of Constraint Functions =    0
-      >> # of K/DCOK/ICOK/DUM/VFM  =    0   1   0   1   1
-      >> # of Max Sample/G/H/Hv    =    0************
-      >> Ordinary Kriging
-      >> Use Wendland C4 SCF
-      >> Use All Hess for Direct Cokriging
-      >> Add epsilon on Diagonal Rij, epsilon =   0.222E-15
-      >> Cross Correlation Relaxation Factor  =   0.9999000
- >> Reading sample.dat
-      >> # of DV, Func, Samples =     2    2    4
-      >> # of Fidelity Levels   =     1
-      >> Fidelity Level :  1
-           >> # of Samples(F     )    =     4
-      >> Min. Dist. between Fidelity-1 Samples (  3,  4 ) =  0.00E+00
  
- >> Best design: Sample point   3 Fct value   0.0183156
-    with X value   0.0000000   0.0000000
- 
- >> Reduce Sample Points for Function  1
-           >> # of Modes in Fid-1 =   4   0   0   0   0   0   4
-           >> # of Modes (sum)    =   4   0   0   0   0   0
- >> Size of Correlation Matrix =      4
- *mdv   != ndv in paramGALN.inp                 
- *mdat  != ndat in paramGALN.inp                 
- *meva  != neva in paramGALN.inp                 
- >> Reading Parameter from paramGALN.inp
-      >> # of Population       =    24
-      >> # of Generation       =    24
-      >> # of Design Variables =     2
-      >> # of Objectives       =     1
-      >> Set of Objectives     :   Max
-      >> Likelihood Maximization for Theta
- >> Check Again the Parameters Setting
-      >> Use new sharing function (index-based)
-      >> Use old fitness function (1/rank)
-      >> Use blended crossover
-           >> Probability of directional crossover =    0.100   0.100
-           >> Probability of neighborhood cultivation =    0.500   0.500
-      >> Use old uniform mutation
- >> Make Initial Population by LHS
- >> Calling evaluation in GA
- >> Starting Main Loop of GA*****
-      >>    1 Pareto Designs until   0 Gen.,  0.182E+02
-      >>    1 Pareto Designs until  12 Gen.,  0.183E+02
-      >>    1 Pareto Designs until  24 Gen.,  0.183E+02
- >> Finishing Main Loop of GA
- >> Output Results....
-      >> Best Design for  1 : (  21  16) :  0.1826E+02
-      >> # of Function Evaluations for New Ones  =      600
-      >> # of Function Evaluations for Gradient  =        0
-      >> # of Function Evaluations for 1D Search =        0
-      >> # of Function Evaluations in Total      =      600
-      >> Best Design =   18.258   0.000
-      >> Theta =    0.013   1.428
- >> Theta      =    0.013   1.428
- >> Deviation  =     0.14251E+00
- >> Likelihood =     0.18258E+02 with Error =     0.99177E-03
- >> Output to meta01.krg
-      >> RMSE on All Sample Points    =    0.11508E-03 among     4 pts
- 
- >> Best design: Sample point   3 Fct value   0.0183156
-    with X value   0.0000000   0.0000000
- 
- >> Make "dak" Database for metamodel
- 
- >> Best design: Sample point   3 Fct value   0.0183156
-    with X value   0.0000000   0.0000000
- 
- ====================================
-   Cross Validation of the model     
- ====================================
+ ==========================
+  CROSS VALIDATION PCE 
+ ==========================
  
  
- >> Evaluating kriging at  :    0.67137E+00    0.57076E+00
- >> Kriging  Value f(xi)   :    0.98892E+00
+ ==========================
+ Function number            2
+ ==========================
  
- 
- >> Evaluating Real Fn at  :    0.67137E+00    0.57076E+00
- >> Real     Value f(xi)   :    0.26341E+01
- 
- 
- >> CV Error       :    0.16452E+01
- 
- 
- >> Program call is successful
- 
-   1.64517635819269     
+ CVE           1  0.343904023583044     
+ CVE           2  0.157882231472835     
+ CVE           3  0.177478631790240     
+ CVE           4  3.839026706627979E-002
+ CVE           5  0.291137603029660     
+ CVE           6  0.160269807770586     
+ CVE           7  0.144921171166097     
+ CVE           8  0.226697899164659     
+ CVE           9  0.147831503998853     
+ CVE          10  0.103708851927152     
+ CVE          11  5.298521436288658E-002
+ CVE          12  2.749298649423090E-002
+ NPTS:          12 MCVE:  0.156058349318877               12
+ CVE           1  0.307381164766437     
+ CVE           2  4.517660928579997E-002
+ CVE           3  5.818844154200536E-002
+ CVE           4  0.255699103515218     
+ CVE           5  0.608683890212894     
+ CVE           6  0.365291895662714     
+ CVE           7  0.713241718984089     
+ CVE           8  0.246547584425228     
+ CVE           9  2.285877805064351E-002
+ CVE          10  0.110828146738603     
+ CVE          11  0.223027991040259     
+ CVE          12  6.048400654757791E-002
+ CVE          13  3.157926600816707E-002
+ CVE          14  0.116182646869759     
+ CVE          15  0.433695187797722     
+ CVE          16  0.103370199913425     
+ CVE          17  2.953596245055601E-002
+ CVE          18   1.27682801956016     
+ CVE          19  7.845949162286869E-003
+ CVE          20  0.276374251231823     
+ NPTS:          20 MCVE:  0.264641040688269               32

@@ -1,5 +1,0 @@
-make
-mpiexec -np 16 ./MixedOUU  |tee screen
-#./save.sh
-
-

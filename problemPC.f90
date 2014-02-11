@@ -55,7 +55,7 @@ program CrossValidationPCE
 
      nmodel=0
 
-     do order=2,3
+     do order=2,10
 
         call combination(nDIM+order,nDIM,nterms)
         ! Get number of points based on stat,solver,oversamp ratios

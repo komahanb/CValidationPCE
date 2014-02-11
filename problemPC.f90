@@ -8,7 +8,7 @@ program CrossValidationPCE
   real*8::DAT,cverrout
   real*8::Tsample(ndim,500)
   real*8::testpoint(ndim)
-  real*8::CVE(500)
+  real*8::CVE(500),MaxCVE
   real*8::MCVE
   integer::j,k,i,knot,nidx,nfunc
   double precision, allocatable, dimension(:,:) :: sample
@@ -51,7 +51,7 @@ program CrossValidationPCE
         if (fct.eq.6) open(unit=37,file='CVPCEfct06dim2.his',form='formatted',status='replace')
      end if
 
-     if (id_proc.eq.0) write(37,'(a)') 'npts MCVE NMODELS'
+     if (id_proc.eq.0) write(37,'(a)') 'npts Order  MeanCVE MaxCVE NMODELS'
 
      nmodel=0
 
@@ -78,6 +78,7 @@ program CrossValidationPCE
            ! We now have a set of npts samples (first one is the center of domain)
 
            CVE(:)=0.0
+           MaxCVE=0.0
 
            do k=1,npts !loop over all points to find the CVE and finally MCVE
 
@@ -104,7 +105,7 @@ program CrossValidationPCE
 
               call PCestimate(ndim,ndim,fct,DAT,order,npts-1,Tsample(:,1:npts-1),testpoint,cverrout)
               CVE(k)=cverrout
-
+              if (CVE(k).gt.MaxCVE) MaxCVE=cve(k)
            end do
 
            MCVE=0.0
@@ -114,8 +115,8 @@ program CrossValidationPCE
            MCVE=MCVE/dble(npts)
 
 
-           if (id_proc.eq.0) write(37,'(i8,e15.5,i8)'), npts, MCVE,nmodel
-           if (id_proc.eq.0) print*,'NPTS:',npts,'MCVE:',MCVE,nmodel
+           if (id_proc.eq.0) write(37,'(2i8,2e15.5,i8)'), npts, Order, MCVE, maxCVE,nmodel
+           if (id_proc.eq.0) print*,'NPTS:',npts,'MCVE:',MCVE,maxCVE,nmodel
 
 
            call MPI_Barrier(MPI_COMM_WORLD,ierr)
